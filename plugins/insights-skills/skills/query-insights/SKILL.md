@@ -49,11 +49,13 @@ SELECT * FROM hx.servers WHERE epoch = (SELECT max(epoch) FROM hx.server_stats)
 -- last hour
 SELECT * FROM hx.servers WHERE epoch >= (SELECT max(epoch) - 3600 FROM hx.server_stats)
 
--- rate of a counter between two consecutive epochs
+-- rate of a counter between the two latest consecutive epochs
 SELECT curr.name, curr.in_msgs - prev.in_msgs AS msg_delta
 FROM hx.servers curr
-JOIN hx.servers prev ON curr.pk = prev.pk AND prev.epoch = <prev_epoch>
-WHERE curr.epoch = <curr_epoch>
+JOIN hx.servers prev ON curr.pk = prev.pk
+WHERE curr.epoch = (SELECT max(epoch) FROM hx.server_stats)
+  AND prev.epoch = (SELECT max(epoch) FROM hx.server_stats
+                    WHERE epoch < (SELECT max(epoch) FROM hx.server_stats))
 ```
 
 ## Aggregation contexts
