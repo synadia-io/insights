@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "synadia-insights",
+  "description": "Agent skills for working with Synadia Insights",
+  "owner": {
+    "name": "Synadia",
+    "email": "insights-report@synadia.com"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "insights-skills",
+      "source": "./plugins/insights-skills",
+      "description": "Skills for querying and analyzing a Synadia Insights database over NATS",
+      "homepage": "https://docs.synadia.com/insights",
+      "repository": "https://github.com/synadia-io/insights",
+      "license": "Apache-2.0",
+      "keywords": ["synadia", "insights", "nats", "duckdb", "observability"]
+    }
+  ]
+}
