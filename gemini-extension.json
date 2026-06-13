@@ -1,0 +1,6 @@
+{
+  "name": "insights-skills",
+  "version": "0.1.0",
+  "description": "Skills for querying and analyzing a Synadia Insights database over NATS",
+  "contextFileName": "GEMINI.md"
+}
