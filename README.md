@@ -20,7 +20,7 @@ distributing [Agent Skills](https://code.claude.com/docs/en/skills) for working 
 The `insights-skills` plugin currently bundles:
 
 - **query-insights** — query an Insights database (DuckDB over NATS) with the `insights query` / `insights db`
-  subcommands: schema discovery, epoch scoping, aggregation contexts, and audit-check macros.
+  subcommands: schema discovery, epoch scoping, aggregation contexts, and check macros.
 
 ### Install in Gemini CLI
 
